@@ -1,1 +1,600 @@
-gulp
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Gulp by xgqfrms-GitHub</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Gulp</h1>
+          <h2>The streaming build system</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/xgqfrms-GitHub/gulp/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/xgqfrms-GitHub/gulp/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/xgqfrms-GitHub/gulp" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <p align="center">
+  <a href="http://gulpjs.com">
+    <img height="257" width="114" src="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp-2x.png">
+  </a>
+  </p><p align="center">The streaming build system</p>
+
+
+<p><a href="https://www.npmjs.com/package/gulp"><img src="https://img.shields.io/npm/v/gulp.svg" alt="NPM version"></a> <a href="https://www.npmjs.com/package/gulp"><img src="https://img.shields.io/npm/dm/gulp.svg" alt="Downloads"></a> <a href="https://travis-ci.org/gulpjs/gulp"><img src="https://img.shields.io/travis/gulpjs/gulp/master.svg" alt="Build Status"></a> <a href="https://coveralls.io/r/gulpjs/gulp"><img src="https://img.shields.io/coveralls/gulpjs/gulp/master.svg" alt="Coveralls Status"></a> <a href="#backers"><img src="https://opencollective.com/gulpjs/backers/badge.svg?color=blue" alt="OpenCollective Backers"></a> <a href="#sponsors"><img src="https://opencollective.com/gulpjs/sponsors/badge.svg?color=blue" alt="OpenCollective Sponsors"></a> <a href="https://gitter.im/gulpjs/gulp"><img src="https://badges.gitter.im/gulpjs/gulp.svg" alt="Gitter chat"></a></p>
+
+<h2>
+<a id="what-is-gulp" class="anchor" href="#what-is-gulp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is gulp?</h2>
+
+<ul>
+<li>
+<strong>Automation</strong> - gulp is a toolkit that helps you automate painful or time-consuming tasks in your development workflow.</li>
+<li>
+<strong>Platform-agnostic</strong> - Integrations are built into all major IDEs and people are using gulp with PHP, .NET, Node.js, Java, and other platforms.</li>
+<li>
+<strong>Strong Ecosystem</strong> - Use npm modules to do anything you want + over 2000 curated plugins for streaming file transformations</li>
+<li>
+<strong>Simple</strong> - By providing only a minimal API surface, gulp is easy to learn and simple to use</li>
+</ul>
+
+<h2>
+<a id="gulp-使用教程-jade" class="anchor" href="#gulp-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B-jade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>gulp 使用教程 jade</h2>
+
+<hr>
+
+<hr>
+
+<h2>
+<a id="1-手动创建-srctemplatesindexjade" class="anchor" href="#1-%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA-srctemplatesindexjade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. 手动创建 src/templates/index.jade</h2>
+
+<h2>
+<a id="2-手动编辑-indexjade" class="anchor" href="#2-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-indexjade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. 手动编辑 index.jade</h2>
+
+<div class="highlight highlight-text-jade"><pre>    doctype html
+    html
+        head
+            title hello jade <span class="pl-ii">&amp;</span> gulp
+        body
+            h1 we used jade to generate this
+            p it seems like it works! :)</pre></div>
+
+<h2>
+<a id="3-手动创建-packagejson" class="anchor" href="#3-%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA-packagejson" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3. 手动创建 package.json</h2>
+
+<h3>
+<a id="cmd-自动创建-npm-init-可以手动设置-packagejson-的详细内容" class="anchor" href="#cmd-%E8%87%AA%E5%8A%A8%E5%88%9B%E5%BB%BA-npm-init-%E5%8F%AF%E4%BB%A5%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AE-packagejson-%E7%9A%84%E8%AF%A6%E7%BB%86%E5%86%85%E5%AE%B9" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>(CMD 自动创建 npm init) 可以手动设置 package.json 的详细内容！</h3>
+
+<div class="highlight highlight-source-json"><pre>    {
+
+    }</pre></div>
+
+<h2>
+<a id="4-cmd-安装-npm-install---save-dev-gulp" class="anchor" href="#4-cmd-%E5%AE%89%E8%A3%85-npm-install---save-dev-gulp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4. CMD 安装 npm install --save-dev gulp</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ pm install --save-dev gulp</pre></div>
+
+<h2>
+<a id="5-cmd-安装-npm-install---save-dev-gulp-jade" class="anchor" href="#5-cmd-%E5%AE%89%E8%A3%85-npm-install---save-dev-gulp-jade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5. CMD 安装 npm install --save-dev gulp-jade</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ npm install --save-dev gulp-jade </pre></div>
+
+<h2>
+<a id="6-手动创建-gulpfilejs" class="anchor" href="#6-%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6. 手动创建 gulpfile.js</h2>
+
+<h2>
+<a id="7-手动编辑-gulpfilejs" class="anchor" href="#7-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7. 手动编辑 gulpfile.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> gulp <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp<span class="pl-pds">'</span></span>),
+        jade <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-jade<span class="pl-pds">'</span></span>);
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/template/**/*.jade<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">jade</span>())
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development<span class="pl-pds">'</span></span>));
+    });</pre></div>
+
+<h2>
+<a id="8-cmd-运行-gulp-jade" class="anchor" href="#8-cmd-%E8%BF%90%E8%A1%8C-gulp-jade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8. CMD 运行 gulp jade</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp jade </pre></div>
+
+<h2>
+<a id="9-手动浏览器查看buildsdevelopmentindexhtml" class="anchor" href="#9-%E6%89%8B%E5%8A%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bbuildsdevelopmentindexhtml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9. 手动浏览器查看builds/development/index.html</h2>
+
+<h2>
+<a id="10-手动编辑indexjade后查看浏览器的变化---没有变化-watching-" class="anchor" href="#10-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91indexjade%E5%90%8E%E6%9F%A5%E7%9C%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%8F%98%E5%8C%96---%E6%B2%A1%E6%9C%89%E5%8F%98%E5%8C%96-watching-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>10. 手动编辑index.jade后，查看浏览器的变化 ? <strong>(??? 没有变化， watching ???)</strong>
+</h2>
+
+<hr>
+
+<hr>
+
+<h2>
+<a id="11-手动创建-srcjsloggerjs" class="anchor" href="#11-%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA-srcjsloggerjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>11. 手动创建 src/js/logger.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-c1">module</span>.<span class="pl-smi">exports</span> <span class="pl-k">=</span> {
+        <span class="pl-en">log</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">string</span>) {
+            <span class="pl-k">if</span>(<span class="pl-en">console</span>) <span class="pl-en">console</span>.<span class="pl-c1">log</span>(string);
+        }
+    }</pre></div>
+
+<h2>
+<a id="13-手动创建-srcjsmainjs" class="anchor" href="#13-%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA-srcjsmainjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>13. 手动创建 src/js/main.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> logger <span class="pl-k">=</span><span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>./logger<span class="pl-pds">'</span></span>);
+
+    <span class="pl-smi">logger</span>.<span class="pl-en">log</span>(<span class="pl-s"><span class="pl-pds">'</span>Hurray, it works! :)<span class="pl-pds">'</span></span>);</pre></div>
+
+<h2>
+<a id="14-cmd-安装-npm-install---save-dev-gulp-browserify" class="anchor" href="#14-cmd-%E5%AE%89%E8%A3%85-npm-install---save-dev-gulp-browserify" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>14. CMD 安装 npm install --save-dev gulp-browserify</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ npm install --save-dev gulp-browserify </pre></div>
+
+<h2>
+<a id="15-手动编辑-gulpfilejs" class="anchor" href="#15-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>15. 手动编辑 gulpfile.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> gulp <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp<span class="pl-pds">'</span></span>),
+        jade <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-jade<span class="pl-pds">'</span></span>),
+        browserify <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-browserify<span class="pl-pds">'</span></span>);
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/template/**/*.jade<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">jade</span>())
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development<span class="pl-pds">'</span></span>));
+    });
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>js<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/js/main.js<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">browserify</span>({ debug<span class="pl-k">:</span> <span class="pl-c1">true</span>}))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development/js<span class="pl-pds">'</span></span>));
+    });</pre></div>
+
+<h2>
+<a id="16-cmd-运行-gulp-js" class="anchor" href="#16-cmd-%E8%BF%90%E8%A1%8C-gulp-js" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>16. CMD 运行 gulp js</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp js </pre></div>
+
+<h2>
+<a id="17-手动编辑-indexjade" class="anchor" href="#17-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-indexjade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>17. 手动编辑 index.jade</h2>
+
+<div class="highlight highlight-text-jade"><pre>    doctype html
+    html
+        head
+            title hello jade <span class="pl-ii">&amp;</span> gulp
+        body
+            h1 we used jade to generate this
+            p it seems like it works! :)
+            mark just check the change of jade!
+            script<span class="pl-c1">(</span><span class="pl-e">src</span>=<span class="pl-s">"./js/main.js"</span><span class="pl-c1">)</span></pre></div>
+
+<h2>
+<a id="18-cmd-运行-gulp-jade" class="anchor" href="#18-cmd-%E8%BF%90%E8%A1%8C-gulp-jade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>18. CMD 运行 gulp jade</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp jade </pre></div>
+
+<h2>
+<a id="19-手动浏览器查看buildsdevelopmentindexhtml" class="anchor" href="#19-%E6%89%8B%E5%8A%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9F%A5%E7%9C%8Bbuildsdevelopmentindexhtml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>19. 手动浏览器查看builds/development/index.html</h2>
+
+<div class="highlight highlight-source-shell"><pre>    Ctrl + P 
+    [index.html]
+    (快速定位文件并打开它)
+    Ctrl + Shift + P 
+    [Open <span class="pl-k">in</span> Browser -Productive Server]</pre></div>
+
+<hr>
+
+<hr>
+
+<h2>
+<a id="20-cmd-安装-npm-install---save-dev-gulp-uglify" class="anchor" href="#20-cmd-%E5%AE%89%E8%A3%85-npm-install---save-dev-gulp-uglify" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>20. CMD 安装 npm install --save-dev gulp-uglify</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ npm install --save-dev gulp-uglify</pre></div>
+
+<h2>
+<a id="21--手动编辑-gulpfilejs" class="anchor" href="#21--%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>21.  手动编辑 gulpfile.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> gulp <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp<span class="pl-pds">'</span></span>),
+        jade <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-jade<span class="pl-pds">'</span></span>),
+        browserify <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-browserify<span class="pl-pds">'</span></span>),
+        uglify<span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-uglify<span class="pl-pds">'</span></span>);
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/template/**/*.jade<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">jade</span>())
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development<span class="pl-pds">'</span></span>));
+    });
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>js<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/js/main.js<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">browserify</span>({ debug<span class="pl-k">:</span> <span class="pl-c1">true</span>}))
+            .<span class="pl-en">pipe</span>(<span class="pl-en">uglify</span>())
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development/js<span class="pl-pds">'</span></span>));
+    });</pre></div>
+
+<h2>
+<a id="22-cmd-运行-gulp-js" class="anchor" href="#22-cmd-%E8%BF%90%E8%A1%8C-gulp-js" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>22. CMD 运行 gulp js</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp js</pre></div>
+
+<h2>
+<a id="23-手动查看buildsdevelopmentjsmainjs--ps13-lines---1-line" class="anchor" href="#23-%E6%89%8B%E5%8A%A8%E6%9F%A5%E7%9C%8Bbuildsdevelopmentjsmainjs--ps13-lines---1-line" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>23. 手动查看builds/development/js/main.js  PS:(13 lines -&gt; 1 line)</h2>
+
+<h2>
+<a id="24-cmd-安装-npm-install---save-dev-gulp-if" class="anchor" href="#24-cmd-%E5%AE%89%E8%A3%85-npm-install---save-dev-gulp-if" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>24. CMD 安装 npm install --save-dev gulp-if</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ npm install --save-dev gulp-if </pre></div>
+
+<h2>
+<a id="25--手动编辑-gulpfilejs" class="anchor" href="#25--%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>25.  手动编辑 gulpfile.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> gulp <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp<span class="pl-pds">'</span></span>),
+        jade <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-jade<span class="pl-pds">'</span></span>),
+        browserify <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-browserify<span class="pl-pds">'</span></span>),
+        uglify<span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-uglify<span class="pl-pds">'</span></span>),
+        gulpif<span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-if<span class="pl-pds">'</span></span>);
+
+    <span class="pl-k">var</span> env <span class="pl-k">=</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>.<span class="pl-c1">NODE_ENV</span>;
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/template/**/*.jade<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">jade</span>())
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development<span class="pl-pds">'</span></span>));
+    });
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>js<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/js/main.js<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">browserify</span>({ debug<span class="pl-k">:</span> env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>}))
+            .<span class="pl-en">pipe</span>(<span class="pl-en">gulpif</span>(env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>, <span class="pl-en">uglify</span>()))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development/js<span class="pl-pds">'</span></span>));
+    });</pre></div>
+
+<h2>
+<a id="26-cmd-运行-node_envdevelopment-gulp-js-ps使用开发调试模式" class="anchor" href="#26-cmd-%E8%BF%90%E8%A1%8C-node_envdevelopment-gulp-js-ps%E4%BD%BF%E7%94%A8%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>26. CMD 运行 NODE_ENV=development gulp js PS:(使用开发调试模式)</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ NODE_ENV=development gulp js</pre></div>
+
+<h2>
+<a id="27-cmd-运行-node_envproduction-gulp-js-ps使用产品发布模式" class="anchor" href="#27-cmd-%E8%BF%90%E8%A1%8C-node_envproduction-gulp-js-ps%E4%BD%BF%E7%94%A8%E4%BA%A7%E5%93%81%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>27. CMD 运行 NODE_ENV=production gulp js PS:(使用产品发布模式)</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ NODE_ENV=production gulp js</pre></div>
+
+<h2>
+<a id="28-手动编辑-gulpfilejs-ps手动开启默认的模式" class="anchor" href="#28-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs-ps%E6%89%8B%E5%8A%A8%E5%BC%80%E5%90%AF%E9%BB%98%E8%AE%A4%E7%9A%84%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>28. 手动编辑 gulpfile.js PS:(手动：开启默认的模式)</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-c">// var env = process.env.NODE_ENV || 'production';</span>
+    <span class="pl-k">var</span> env <span class="pl-k">=</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>.<span class="pl-c1">NODE_ENV</span> <span class="pl-k">||</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>;</pre></div>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> gulp <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp<span class="pl-pds">'</span></span>),
+        jade <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-jade<span class="pl-pds">'</span></span>),
+        browserify <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-browserify<span class="pl-pds">'</span></span>),
+        uglify<span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-uglify<span class="pl-pds">'</span></span>),
+        gulpif<span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-if<span class="pl-pds">'</span></span>);
+
+    <span class="pl-k">var</span> env <span class="pl-k">=</span> <span class="pl-c1">process</span>.<span class="pl-smi">env</span>.<span class="pl-c1">NODE_ENV</span> <span class="pl-k">||</span> <span class="pl-s"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>; 
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/template/**/*.jade<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">jade</span>())
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development<span class="pl-pds">'</span></span>));
+    });
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>js<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/js/main.js<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">browserify</span>({ debug<span class="pl-k">:</span> env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>}))
+            .<span class="pl-en">pipe</span>(<span class="pl-en">gulpif</span>(env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>, <span class="pl-en">uglify</span>()))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development/js<span class="pl-pds">'</span></span>));
+    });</pre></div>
+
+<hr>
+
+<hr>
+
+<h2>
+<a id="29-cmd-安装-npm-install---save-dev-gulp-sass" class="anchor" href="#29-cmd-%E5%AE%89%E8%A3%85-npm-install---save-dev-gulp-sass" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>29. CMD 安装 npm install --save-dev gulp-sass</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ npm install --save-dev gulp-sass  </pre></div>
+
+<h2>
+<a id="30-手动编辑-gulpfilejs" class="anchor" href="#30-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>30. 手动编辑 gulpfile.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    sass<span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-sass<span class="pl-pds">'</span></span>);
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>sass<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/sass/main.scss<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">sass</span>({ sourceComments<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>map<span class="pl-pds">'</span></span>}))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(<span class="pl-s"><span class="pl-pds">'</span>builds/development/css<span class="pl-pds">'</span></span>));
+    });</pre></div>
+
+<h2>
+<a id="31-手动创建--编辑-srcsassmainscss" class="anchor" href="#31-%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA--%E7%BC%96%E8%BE%91-srcsassmainscss" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>31. 手动创建 &amp; 编辑 src/sass/main.scss</h2>
+
+<div class="highlight highlight-source-sass"><pre>    <span class="pl-k">body</span> {
+        <span class="pl-c1">color</span>: <span class="pl-v">$red</span>;
+    }</pre></div>
+
+<h2>
+<a id="33-手动创建--编辑-srcsassvariablesscss" class="anchor" href="#33-%E6%89%8B%E5%8A%A8%E5%88%9B%E5%BB%BA--%E7%BC%96%E8%BE%91-srcsassvariablesscss" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>33. 手动创建 &amp; 编辑 src/sass/variables.scss</h2>
+
+<div class="highlight highlight-source-sass"><pre>    <span class="pl-v">$red</span>: <span class="pl-c1">#ff0000</span>;
+    <span class="pl-c">// rgba();</span></pre></div>
+
+<h2>
+<a id="31-手动编辑-srcsassmainscss" class="anchor" href="#31-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-srcsassmainscss" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>31. 手动编辑 src/sass/main.scss</h2>
+
+<div class="highlight highlight-source-sass"><pre>    <span class="pl-k">@import</span> <span class="pl-s">"variables"</span>;
+
+    <span class="pl-k">body</span> {
+        <span class="pl-c1">color</span>: <span class="pl-v">$red</span>;
+    }</pre></div>
+
+<h2>
+<a id="34-cmd-运行-gulp-sass" class="anchor" href="#34-cmd-%E8%BF%90%E8%A1%8C-gulp-sass" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>34. CMD 运行 gulp sass</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp sass</pre></div>
+
+<h2>
+<a id="35-手动编辑-indexjade" class="anchor" href="#35-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-indexjade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>35. 手动编辑 index.jade</h2>
+
+<div class="highlight highlight-text-jade"><pre>    doctype html
+    html
+        head
+            title hello jade <span class="pl-ii">&amp;</span> gulp
+            link<span class="pl-c1">(</span><span class="pl-e">rel</span>=<span class="pl-s">"stylesheet"</span> <span class="pl-e">href</span>=<span class="pl-s">"./css/main.css"</span><span class="pl-c1">)</span>
+        body
+            h1 we used jade to generate this
+            p it seems like it works! :)
+            mark just check the change of jade!
+            script<span class="pl-c1">(</span><span class="pl-e">src</span>=<span class="pl-s">"./js/main.js"</span><span class="pl-c1">)</span></pre></div>
+
+<h2>
+<a id="36-cmd-运行-gulp-jade" class="anchor" href="#36-cmd-%E8%BF%90%E8%A1%8C-gulp-jade" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>36. CMD 运行 gulp jade</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp jade</pre></div>
+
+<h2>
+<a id="37-手动编辑-gulpfilejs" class="anchor" href="#37-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>37. 手动编辑 gulpfile.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-k">var</span> outputDir <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>builds/development<span class="pl-pds">'</span></span>;
+    <span class="pl-c">//path 变量</span>
+    .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(outputDir));
+    <span class="pl-c">// .pipe(gulp.dest('builds/development'));</span>
+    .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(outputDir <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>/js<span class="pl-pds">'</span></span>));
+    <span class="pl-c">// .pipe(gulp.dest('builds/development/js'));</span>
+    .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(outputDir <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>/css<span class="pl-pds">'</span></span>));
+    <span class="pl-c">// .pipe(gulp.dest('builds/development/css'));</span></pre></div>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>sass<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">var</span> config <span class="pl-k">=</span> {};
+        <span class="pl-k">if</span> (env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>) {
+            <span class="pl-smi">config</span>.<span class="pl-smi">sourceComments</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>map<span class="pl-pds">'</span></span>;
+        } 
+        <span class="pl-k">if</span>(env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>){
+            <span class="pl-smi">config</span>.<span class="pl-smi">outputStyle</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>compressed<span class="pl-pds">'</span></span>;
+        }
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/sass/main.scss<span class="pl-pds">'</span></span>)
+            <span class="pl-c">// .pipe(sass({ sourceComments: 'map'}))</span>
+            .<span class="pl-en">pipe</span>(<span class="pl-en">sass</span>(config))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(outputDir <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>/css<span class="pl-pds">'</span></span>));
+            <span class="pl-c">// .pipe(gulp.dest('builds/development/css'));</span>
+    });</pre></div>
+
+<h2>
+<a id="38-cmd-运行-node_envdevelopment-gulp-sass-ps使用开发调试模式" class="anchor" href="#38-cmd-%E8%BF%90%E8%A1%8C-node_envdevelopment-gulp-sass-ps%E4%BD%BF%E7%94%A8%E5%BC%80%E5%8F%91%E8%B0%83%E8%AF%95%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>38. CMD 运行 NODE_ENV=development gulp sass PS:(使用开发调试模式)</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ NODE_ENV=development gulp sass</pre></div>
+
+<h2>
+<a id="39-cmd-运行-node_envproduction-gulp-sass-ps使用产品发布模式" class="anchor" href="#39-cmd-%E8%BF%90%E8%A1%8C-node_envproduction-gulp-sass-ps%E4%BD%BF%E7%94%A8%E4%BA%A7%E5%93%81%E5%8F%91%E5%B8%83%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>39. CMD 运行 NODE_ENV=production gulp sass PS:(使用产品发布模式)</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ NODE_ENV=production gulp sass</pre></div>
+
+<hr>
+
+<hr>
+
+<h2>
+<a id="40-手动编辑-gulpfilejs" class="anchor" href="#40-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>40. 手动编辑 gulpfile.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>watch<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-smi">gulp</span>.<span class="pl-c1">watch</span>(<span class="pl-s"><span class="pl-pds">'</span>src/template/**/*.jade<span class="pl-pds">'</span></span>,[<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>]);
+        <span class="pl-smi">gulp</span>.<span class="pl-c1">watch</span>(<span class="pl-s"><span class="pl-pds">'</span>src/js/**/*.js<span class="pl-pds">'</span></span>,[<span class="pl-s"><span class="pl-pds">'</span>js<span class="pl-pds">'</span></span>]);
+        <span class="pl-smi">gulp</span>.<span class="pl-c1">watch</span>(<span class="pl-s"><span class="pl-pds">'</span>src/sass/**/*.scss<span class="pl-pds">'</span></span>,[<span class="pl-s"><span class="pl-pds">'</span>sass<span class="pl-pds">'</span></span>]);
+    });</pre></div>
+
+<h2>
+<a id="41-cmd-运行-gulp-watch-ps使用-watch-自动监测变化" class="anchor" href="#41-cmd-%E8%BF%90%E8%A1%8C-gulp-watch-ps%E4%BD%BF%E7%94%A8-watch-%E8%87%AA%E5%8A%A8%E7%9B%91%E6%B5%8B%E5%8F%98%E5%8C%96" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>41. CMD 运行 gulp watch PS:(使用 watch 自动监测变化)</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp watch</pre></div>
+
+<h2>
+<a id="42-手动编辑-gulpfilejs" class="anchor" href="#42-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>42. 手动编辑 gulpfile.js</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>default<span class="pl-pds">'</span></span>,[<span class="pl-s"><span class="pl-pds">'</span>js<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>sass<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>watch<span class="pl-pds">'</span></span>]);
+    <span class="pl-c">/*</span>
+<span class="pl-c">        function(){</span>
+<span class="pl-c">            gulp.watch('src/template/**/</span><span class="pl-k">*</span>.<span class="pl-smi">jade</span><span class="pl-s"><span class="pl-pds">'</span>,[<span class="pl-pds">'</span></span>jade<span class="pl-s"><span class="pl-pds">'</span><span class="pl-ii">]);</span></span>
+<span class="pl-s"><span class="pl-ii">        }</span></span>
+<span class="pl-s"><span class="pl-ii">        === ???</span></span>
+<span class="pl-s">        [<span class="pl-pds">'</span></span>jade<span class="pl-s"><span class="pl-pds">'</span><span class="pl-ii">]</span></span>
+<span class="pl-s"><span class="pl-ii">    */</span></span></pre></div>
+
+<h2>
+<a id="43-cmd-运行-gulp-ps使用default模式指定-tasks" class="anchor" href="#43-cmd-%E8%BF%90%E8%A1%8C-gulp-ps%E4%BD%BF%E7%94%A8default%E6%A8%A1%E5%BC%8F%E6%8C%87%E5%AE%9A-tasks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>43. CMD 运行 gulp PS:(使用default模式,指定 tasks)</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp</pre></div>
+
+<h2>
+<a id="44--cmd-运行-ctrl--c-退出-watch--default-模式" class="anchor" href="#44--cmd-%E8%BF%90%E8%A1%8C-ctrl--c-%E9%80%80%E5%87%BA-watch--default-%E6%A8%A1%E5%BC%8F" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>44.  CMD 运行 Ctrl + C (退出 watch / default 模式)</h2>
+
+<hr>
+
+<hr>
+
+<h2>
+<a id="45-cmd-安装-npm-install---save-dev-gulp-connect" class="anchor" href="#45-cmd-%E5%AE%89%E8%A3%85-npm-install---save-dev-gulp-connect" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>45. CMD 安装 npm install --save-dev gulp-connect</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ npm install --save-dev gulp-connect  </pre></div>
+
+<h2>
+<a id="46-手动编辑-gulpfilejs--ps自动启动web-server打开browser可以配置端口" class="anchor" href="#46-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs--ps%E8%87%AA%E5%8A%A8%E5%90%AF%E5%8A%A8web-server%E6%89%93%E5%BC%80browser%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE%E7%AB%AF%E5%8F%A3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>46. 手动编辑 gulpfile.js  PS:(自动启动Web Server,打开browser,可以配置端口)</h2>
+
+<div class="highlight highlight-source-js"><pre>    connect<span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>gulp-connect<span class="pl-pds">'</span></span>);
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>connect<span class="pl-pds">'</span></span>,<span class="pl-smi">connect</span>.<span class="pl-en">server</span>({
+        root<span class="pl-k">:</span> [outputDir],
+        open<span class="pl-k">:</span> { browser<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Google Chrome<span class="pl-pds">'</span></span>}
+    }));
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>default<span class="pl-pds">'</span></span>,[<span class="pl-s"><span class="pl-pds">'</span>js<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>sass<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>watch<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>connect<span class="pl-pds">'</span></span>]);</pre></div>
+
+<h2>
+<a id="47-cmd-运行-gulp-ps使用default模式指定-tasks" class="anchor" href="#47-cmd-%E8%BF%90%E8%A1%8C-gulp-ps%E4%BD%BF%E7%94%A8default%E6%A8%A1%E5%BC%8F%E6%8C%87%E5%AE%9A-tasks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>47. CMD 运行 gulp PS:(使用default模式,指定 tasks)</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp</pre></div>
+
+<h2>
+<a id="48-手动编辑-gulpfilejs--ps自动刷新-pipeconnectreload" class="anchor" href="#48-%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs--ps%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0-pipeconnectreload" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>48. 手动编辑 gulpfile.js  PS:(自动刷新 .pipe(connect.reload());)</h2>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>jade<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/template/**/*.jade<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">jade</span>())
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(outputDir))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">connect</span>.<span class="pl-c1">reload</span>());
+            <span class="pl-c">// .pipe(gulp.dest('builds/development'));</span>
+    });
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>js<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/js/main.js<span class="pl-pds">'</span></span>)
+            .<span class="pl-en">pipe</span>(<span class="pl-en">browserify</span>({ debug<span class="pl-k">:</span> env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>}))
+            .<span class="pl-en">pipe</span>(<span class="pl-en">gulpif</span>(env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>, <span class="pl-en">uglify</span>()))
+            .<span class="pl-en">pipe</span>(<span class="pl-en">uglify</span>())
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(outputDir <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>/js<span class="pl-pds">'</span></span>))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">connect</span>.<span class="pl-c1">reload</span>());
+            <span class="pl-c">// .pipe(gulp.dest('builds/development/js'));</span>
+    });
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>sass<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-k">var</span> config <span class="pl-k">=</span> {};
+        <span class="pl-k">if</span> (env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>development<span class="pl-pds">'</span></span>) {
+            <span class="pl-smi">config</span>.<span class="pl-smi">sourceComments</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>map<span class="pl-pds">'</span></span>;
+        } 
+        <span class="pl-k">if</span>(env <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>production<span class="pl-pds">'</span></span>){
+            <span class="pl-smi">config</span>.<span class="pl-smi">outputStyle</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'</span>compressed<span class="pl-pds">'</span></span>;
+        }
+        <span class="pl-k">return</span> <span class="pl-smi">gulp</span>.<span class="pl-en">src</span>(<span class="pl-s"><span class="pl-pds">'</span>src/sass/main.scss<span class="pl-pds">'</span></span>)
+            <span class="pl-c">// .pipe(sass({ sourceComments: 'map'}))</span>
+            .<span class="pl-en">pipe</span>(<span class="pl-en">sass</span>(config))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">gulp</span>.<span class="pl-en">dest</span>(outputDir <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span>/css<span class="pl-pds">'</span></span>))
+            .<span class="pl-en">pipe</span>(<span class="pl-smi">connect</span>.<span class="pl-c1">reload</span>());
+            <span class="pl-c">// .pipe(gulp.dest('builds/development/css'));</span>
+    });</pre></div>
+
+<h2>
+<a id="49-cmd-运行-gulp" class="anchor" href="#49-cmd-%E8%BF%90%E8%A1%8C-gulp" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>49. CMD 运行 gulp</h2>
+
+<div class="highlight highlight-source-shell"><pre>    $ gulp</pre></div>
+
+<h2>
+<a id="50-some-errors" class="anchor" href="#50-some-errors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>50. some errors</h2>
+
+<p><a href="https://github.com/AveVlad/gulp-connect/issues/202">here some errors, what's wrong with this? #202</a>
+<a href="https://www.youtube.com/watch?v=KURMrW-HsY4&amp;index=7&amp;list=PLRk95HPmOM6PN-G1xyKj9q6ap_dc9Yckm">Get started with gulp Part 6: LiveReload and web server</a>
+<a href="https://github.com/xgqfrms/AngularJS/tree/gh-pages/images/errors">/images/errors/</a>
+<a href="https://github.com/xgqfrms/AngularJS/tree/gh-pages/gulp-test">gulp-test</a></p>
+
+<div class="highlight highlight-source-js"><pre>    <span class="pl-c">/*</span>
+<span class="pl-c">    gulp.task('connect',connect.server({</span>
+<span class="pl-c">        root: [outputDir],</span>
+<span class="pl-c">        open: { browser: 'Google Chrome'}</span>
+<span class="pl-c">    }));</span>
+<span class="pl-c">    */</span>
+    <span class="pl-c">//https://github.com/AveVlad/gulp-connect</span>
+
+    <span class="pl-smi">gulp</span>.<span class="pl-en">task</span>(<span class="pl-s"><span class="pl-pds">'</span>connect<span class="pl-pds">'</span></span>,<span class="pl-k">function</span>(){
+        <span class="pl-smi">connect</span>.<span class="pl-en">server</span>({
+            root<span class="pl-k">:</span> [outputDir],
+            port<span class="pl-k">:</span> <span class="pl-c1">8080</span>,
+            livereload<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+            <span class="pl-c">// open: { browser: 'Google Chrome'}</span>
+        });
+    });</pre></div>
+
+<h2>
+<a id="bugs-fixed-" class="anchor" href="#bugs-fixed-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>bugs fixed ?</h2>
+
+<h3>
+<a id="手动编辑-gulpfilejs" class="anchor" href="#%E6%89%8B%E5%8A%A8%E7%BC%96%E8%BE%91-gulpfilejs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>手动编辑 gulpfile.js</h3>
+
+<p>'''javascript
+    var env = process.env.NODE_ENV;
+'''</p>
+
+<blockquote>
+<p>CMD: 手动 传入参数 
+set NODE_ENV=development
+set NODE_ENV=production</p>
+</blockquote>
+
+<p>'''bash
+    $ set NODE_ENV=development
+    $ gulp
+'''
+'''bash
+    $ set NODE_ENV=production
+    $ gulp
+'''</p>
+
+<p>???</p>
+
+<h3>
+<a id="why-it-doesnt-work-by-using" class="anchor" href="#why-it-doesnt-work-by-using" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>why it doesn't work by using</h3>
+
+<p>// var env = process.env.NODE_ENV || 'production';
+// var env = process.env.NODE_ENV || 'development';</p>
+
+<h2>
+<a id="using-gulp-with-browserify-without-the-plugin" class="anchor" href="#using-gulp-with-browserify-without-the-plugin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Using gulp with browserify without the plugin</h2>
+
+<h3>
+<a id="npm-install---save-dev-gulp-browserify-vinyl-source-stream" class="anchor" href="#npm-install---save-dev-gulp-browserify-vinyl-source-stream" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>npm install --save-dev gulp browserify vinyl-source-stream</h3>
+
+<div class="highlight highlight-source-shell"><pre>    npm install --save-dev gulp browserify vinyl-source-stream
+    ===
+    npm install --save-dev gulp 
+    npm install --save-dev browserify
+    npm install --save-dev vinyl-source-stream</pre></div>
+
+<h3>
+<a id="npm-install---save-dev-gulp-uglify" class="anchor" href="#npm-install---save-dev-gulp-uglify" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>npm install --save-dev gulp-uglify</h3>
+
+<h3>
+<a id="npm-install---save-dev-gulp-streamify" class="anchor" href="#npm-install---save-dev-gulp-streamify" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>npm install --save-dev gulp-streamify</h3>
+        </section>
+
+        <footer>
+          Gulp is maintained by <a href="https://github.com/xgqfrms-GitHub">xgqfrms-GitHub</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
