@@ -34,9 +34,9 @@
 ```markdown
   [![NPM version][npm-image]][npm-url]
   
-  [npm-url]: https://www.npmjs.com/package/gulp
-  [npm-image]: https://img.shields.io/npm/v/gulp.svg
+  [npm-url]: https://xgqfrms-github.github.io/gulp/
+  [npm-image]: https://xgqfrms-github.github.io/gulp/images/gulp-markdown.PNG
 ```
 ### effect-image
-![https://github.com/xgqfrms-GitHub/gulp/edit/gh-pages/Markdown.md](https://github.com/xgqfrms-GitHub/gulp/edit/gh-pages/Markdown.md)
+![https://xgqfrms-github.github.io/gulp/](https://xgqfrms-github.github.io/gulp/images/gulp-markdown.PNG)
 
